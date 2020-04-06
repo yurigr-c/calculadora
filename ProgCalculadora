@@ -1,0 +1,70 @@
+
+namespace ProgRelogio
+
+{
+    class RELOGIO
+    {
+
+        private double segundos;
+        
+
+        /*Construtor*/
+        public RELOGIO(double seg)
+        {
+            segundos = seg;
+        }
+        public  double Segundos
+        {
+            get { return segundos; }
+            set
+            {
+                if (value == 0)
+                    System.Console.WriteLine("Segundos não pode ser zero");
+                segundos = value;
+            }
+                      
+        }
+
+        public double Hora
+        {
+            get { return segundos / 3600; }
+            set { if (value <= 1 && value >= 24)
+                    System.Console.WriteLine("Valor deve ser entre 1 e 24");
+                        segundos = value * 3600; }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+namespace ProgRelogio
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           RELOGIO R = new RELOGIO(7200);
+          // R.Segundos = 7200;
+
+            double ss = R.Segundos;
+            System.Console.WriteLine(ss);
+           
+
+            double rr = R.Hora;
+            System.Console.WriteLine(rr);
+            System.Console.ReadKey();
+
+
+        }
+    }
+}
+
+
